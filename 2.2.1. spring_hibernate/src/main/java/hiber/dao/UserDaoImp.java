@@ -31,7 +31,5 @@ public class UserDaoImp implements UserDao {
       String HQL="FROM User user WHERE user.car.model=:carModel and user.car.series=: carSeries";
        return sessionFactory.getCurrentSession().createQuery(HQL, User.class).setParameter("carModel",model)
                .setParameter("carSeries",series).uniqueResult();
-
    }
-
 }
